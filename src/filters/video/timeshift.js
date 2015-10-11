@@ -2,7 +2,7 @@ function timeshift(time)
 {
     // Store a stream of the last second in a ring buffer
 
-    var max_frames=25;
+    var max_frames=50;
     
     if(!this._.pastTextures) this._.pastTextures=[];
 
