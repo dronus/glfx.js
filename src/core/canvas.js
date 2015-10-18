@@ -64,9 +64,9 @@ function initialize(width, height) {
    are used.
 */
 function draw(texture, width, height) {
-    if (!this._.isInitialized || texture._.width != this.width || texture._.height != this.height) {
+   /* if (!this._.isInitialized || texture._.width != this.width || texture._.height != this.height) {
         initialize.call(this, width ? width : texture._.width, height ? height : texture._.height);
-    }
+    }*/
 
     texture._.use();
     this._.texture.drawTo(function() {
@@ -184,6 +184,7 @@ exports.canvas = function() {
     canvas.sepia = wrap(sepia);
     // dronus' filter methods
     canvas.capture = wrap(capture);
+    canvas.video = wrap(video);
     canvas.stack_prepare=wrap(stack_prepare);
     canvas.stack_push=wrap(stack_push);
     canvas.stack_pop=wrap(stack_pop);
@@ -197,6 +198,7 @@ exports.canvas = function() {
     canvas.posterize=wrap(posterize);
 //    canvas.=wrap();
     canvas.superquadric=wrap(superquadric);
+    canvas.supershape=wrap(supershape);
     canvas.feedbackIn = wrap(feedbackIn);
     canvas.feedbackOut = wrap(feedbackOut);
     canvas.grid = wrap(grid);
@@ -206,6 +208,7 @@ exports.canvas = function() {
     canvas.localContrast=wrap(localContrast);
     canvas.preview=wrap(preview);
     canvas.life=wrap(life);
+    canvas.smoothlife=wrap(smoothlife);
     canvas.ripple=wrap(ripple);
     canvas.colorDisplacement=wrap(colorDisplacement);
     canvas.analogize=wrap(analogize);
@@ -221,16 +224,11 @@ exports.canvas = function() {
     canvas.waveform=wrap(waveform);
     canvas.spectrogram=wrap(spectrogram);
     // hexapode's filters methods
-    canvas.coloradjust = wrap(coloradjust);
     canvas.color = wrap(color);
-    canvas.exposure = wrap(exposure);
-    canvas.gamma = wrap(gamma);
-    canvas.gammaRGB = wrap(gammaRGB);
-    canvas.hue = wrap(hue);
+    canvas.levels = wrap(levels);
     canvas.absolute = wrap(absolute);
     canvas.rainbow = wrap(rainbow);    
     canvas.sobel = wrap(sobel);
-    canvas.softContrast = wrap(softContrast);
     canvas.toHSV = wrap(toHSV);
     canvas.invertColor = wrap(invertColor);
     canvas.noalpha = wrap(noalpha);
